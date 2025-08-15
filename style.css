@@ -48,7 +48,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background:darkturquoise;
+    background:darkblue;
     display: flex;
     margin-top: 20px;
     border: 4mm ridge cyan
@@ -79,4 +79,28 @@ main {
 
 h2, h3 {
     margin: 0px;
+}
+.content h1 {
+  color:aqua;
+}
+
+#portfolio {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#portfolio li {
+  background:cyan;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+  background:navy;
+}
+
+#portfolio a {
+  text-decoration: none;
+  color:dodgerblue;
 }
