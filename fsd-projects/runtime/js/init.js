@@ -34,7 +34,7 @@ var init = function (window) {
   var help = draw.textfield(
     "MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!",
     "20px Arial",
-    "#ccc",
+    "#ffffffff",
     "left"
   );
   help.x = 10;
@@ -46,7 +46,7 @@ var init = function (window) {
     halle = window.opspark.makeHalle(
       spritesheet,
       particleManager,
-      debugHalleHitZones
+      debugHalleHitZones = true
     );
     halle.x = halle.getBounds().width * 2;
     halle.y = ground.y - halle.getBounds().height + 3;
