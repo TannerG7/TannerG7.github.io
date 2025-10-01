@@ -67,6 +67,29 @@ reward.onPlayerCollision = function() {
 }
 }
 
+function createMarker(x, y) {
+  var marker = game.createGameItem("marker", 50)
+  var blueSquare = draw.rect(100, 100, "cyan")
+  blueSquare.x = -50
+  blueSquare.y = -50
+  marker.addChild(blueSquare)
+  marker.x = x
+  marker.y = y
+  marker.velocityX = -2
+  marker.rotationalVelocity = 1
+  game.addGameItem(marker)
+  marker.onPlayerCollision = function () {
+    game.changeIntegrity(100)
+    game.increaseScore(10000)
+    startLevel()
+  }
+  marker.onProjectileCollisionCollision = function () {
+    game.changeIntegrity(100)
+    game.increaseScore(10000)
+    startLevel()
+  }
+}
+createMarker(1500 , 200)
 
 createReward(400,170)
 
@@ -79,7 +102,10 @@ createSawBlade(1000, 265);
 
     function startLevel() {
       // TODO 13 goes below here
-
+      var level = levelData[currentLevel]
+      var levelObjects = level.gameItems
+      for (i = 0; i < levelObjects.length; i++)
+        var gameItem = levelObjects[i]
 
 
       //////////////////////////////////////////////
