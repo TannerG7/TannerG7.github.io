@@ -80,33 +80,36 @@ function createMarker(x, y) {
   game.addGameItem(marker)
   marker.onPlayerCollision = function () {
     game.changeIntegrity(100)
-    game.increaseScore(10000)
+    game.increaseScore(2000)
     startLevel()
   }
-  marker.onProjectileCollisionCollision = function () {
-    game.changeIntegrity(100)
-    game.increaseScore(10000)
-    startLevel()
-  }
+  
 }
-createMarker(1500 , 200)
-
-createReward(400,170)
 
 
-createEnemy(600, groundY - 70)
-
-createSawBlade(800, 175);
-createSawBlade(1300, 165);
-createSawBlade(1000, 265);
 
     function startLevel() {
       // TODO 13 goes below here
       var level = levelData[currentLevel]
       var levelObjects = level.gameItems
-      for (i = 0; i < levelObjects.length; i++)
+      for (i = 0; i < levelObjects.length; i++) {
         var gameItem = levelObjects[i]
-
+        var gameItemType = gameItem.type
+        var itemX = gameItem.x
+        var itemY = gameItem.y
+        if (gameItemType === "sawblade") {
+          createSawBlade(itemX, itemY)
+        }
+        else if (gameItemType === "enemy") {
+          createEnemy(itemX, itemY)
+        }
+        else if (gameItemType === "reward") {
+          createReward(itemX, itemY)
+        }
+        else if (gameItemType === "marker") {
+          createMarker(itemX, itemY)
+        }
+      }
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
