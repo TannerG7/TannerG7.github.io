@@ -22,7 +22,7 @@ var makeLevelData = function (window) {
           { type: "marker", x:1650, y: groundY -45},
           { type: "enemy", x: 400, y: groundY-60},
           {type: "sawblade", x: 1100, y: groundY},
-          {type: "enemy", x: 1200, y: groundY -35},
+          
         ],
       },
       {
@@ -32,13 +32,33 @@ var makeLevelData = function (window) {
         gameItems: [
           { type: "sawblade", x: 400, y: groundY },
           { type: "sawblade", x: 600, y: groundY -100 },
-          { type: "sawblade", x: 900, y: groundY},
-          { type: "reward", x: 750, y: groundY -25},
-          {type: "enemy", x: 375, y: groundY -60},
-          
+          { type: "reward", x: 750, y: groundY -30},
+          {type: "enemy", x: 375, y: groundY -50},
+          {type: "marker", x:1500, y:groundY -45},
+          {type: "sawblade", x:875, y:groundY},
+          {type: "enemy", x:1000, y: groundY -60}
         ],
       },
+        {
+      name: "Robot Romp",
+        number: 3,
+        speed: -3,
+        gameItems: [
+          { type: "sawblade", x: 400, y: groundY -100 },
+          { type: "sawblade", x: 600, y: groundY },
+          { type: "sawblade", x: 900, y: groundY -125 },
+          {type: "reward", x: 750, y: groundY -75},
+          { type: "marker", x:1800, y: groundY -45},
+          { type: "enemy", x: 400, y: groundY-60},
+          {type: "sawblade", x: 1100, y: groundY},
+          {type: "enemy", x: 1200, y: groundY -35},
+          {type: "sawblade", x: 1600, y: groundY -75},
+          {type: "enemy", x: 1200, y: groundY -35},
+          {type: "enemy", x:1425, y: groundY -20},
+        ],
+      }
     ];
+
     window.opspark.levelData = levelData;
   };
 };

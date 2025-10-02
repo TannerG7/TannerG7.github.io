@@ -65,6 +65,14 @@ reward.onPlayerCollision = function() {
    game.increaseScore(100);
    reward.shrink();
 }
+reward.onProjectileCollision = function() {
+game.changeIntegrity(10)
+   game.increaseScore(100);
+   reward.shrink();
+  
+}
+
+
 }
 
 function createMarker(x, y) {
@@ -83,7 +91,10 @@ function createMarker(x, y) {
     game.increaseScore(2000)
     startLevel()
   }
-  
+  marker.onProjectileCollision = function() {
+    game.increaseScore(10);
+    
+  }
 }
 
 
@@ -93,10 +104,10 @@ function createMarker(x, y) {
       var level = levelData[currentLevel]
       var levelObjects = level.gameItems
       for (i = 0; i < levelObjects.length; i++) {
-        var gameItem = levelObjects[i]
-        var gameItemType = gameItem.type
-        var itemX = gameItem.x
-        var itemY = gameItem.y
+        var gameItem = levelObjects[i];
+        var gameItemType = gameItem.type;
+        var itemX = gameItem.x;
+        var itemY = gameItem.y;
         if (gameItemType === "sawblade") {
           createSawBlade(itemX, itemY)
         }
